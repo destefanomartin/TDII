@@ -1,0 +1,33 @@
+1° 
+
+
+Name : r0
+	Hex:0x20000048
+	Decimal:536870984
+	Octal:04000000110
+	Binary:100000000000000000000001001000
+	Default:536870984
+
+2° 
+
+
+
+1- TaskTable
+4
+2. TaskArgument1
+4
+3. TaskArgument2 
+4
+4. TaskArgument3 
+4
+5. TaskArgument4
+4
+6. TaskArgument5 
+4
+7. TaskTable1
+
+3ER LOOP TUVE QUE CAMBIAR POR BHS 
+
+tasktableparts? cuanto deberia ser? 
+
+Dudas con las divisiones 
