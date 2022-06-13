@@ -431,7 +431,7 @@ mainLoop:
   		LDR		R3, [R2]				// R0 <- mem[R1]			// R0 <- R0 + 1
 		STR		R3, [R2]    			// mem[R1] <- R0 => taskCnt++;
 		CMP		R3, #tasksTableParts
-		BLS 	mainLoopContinue		// Jump if (R0 < tasksTableParts)
+		BLT		mainLoopContinue		// Jump if (R0 < tasksTableParts)
 
 		MOVS	R3, #0					// R0 <- 0
 		STR		R3, [R2]      			// mem[R1] <- R0 => taskCnt = 0;
