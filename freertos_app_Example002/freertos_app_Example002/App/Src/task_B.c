@@ -51,6 +51,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 
+
 /* Standard includes. */
 #include <stdio.h>
 #include <stdlib.h>
@@ -63,6 +64,7 @@
 /* Application includes. */
 #include "app_Resources.h"
 #include "task_B.h"
+
 
 // ------ Macros and definitions ---------------------------------------
 
@@ -104,8 +106,8 @@ void vTaskB( void *pvParameters )
 	 * Take the semaphore once to start with so the semaphore is empty before the
 	 * infinite loop is entered.  The semaphore was created before the scheduler
 	 * was started so before this task ran for the first time.*/
-    xSemaphoreTake( xBinarySemaphoreExit, (portTickType) 0 );
 
+    xSemaphoreTake( xBinarySemaphoreExit , (portTickType) 0 );
     /* Reset Task B Flag	*/
     lTaskBFlag = 0;
 
@@ -119,7 +121,7 @@ void vTaskB( void *pvParameters )
          * semaphore has been successfully obtained - so there is no need to check
          * the returned value. */
 		vPrintString( pcTextForTaskB_WaitExit );
-        xSemaphoreTake( xBinarySemaphoreExit, portMAX_DELAY );
+        xSemaphoreTake( xBinarySemaphoreExit  , portMAX_DELAY );
         {
         	/* The semaphore is created before the scheduler is started so already
     		 * exists by the time this task executes.
@@ -136,29 +138,15 @@ void vTaskB( void *pvParameters )
         		 * successfully obtained. */
 
         		/* Update Task A & B Counter */
-        		lTasksCnt--;
-    			vPrintStringAndNumber( pcTextForTaskB_lTasksCnt, lTasksCnt);
 
-   			    /* Check Task A & B Counter	*/
-    			if( lTasksCnt == (lTasksCntMAX - 1) )
-    			{
-       			    /* Set Task B Flag	*/
-    				lTaskBFlag = 1;
-    			}
+
+    			xSemaphoreGive(xCountingSemaphore);
+       			vPrintStringAndNumber( pcTextForTaskB_lTasksCnt, uxSemaphoreGetCount(xCountingSemaphore));
+
     			/* 'Give' the semaphore to unblock the tasks. */
         		vPrintString( pcTextForTaskB_SignalMutex );
         		xSemaphoreGive( xMutex );
 
-   			    /* Check Task B Flag	*/
-       			if( lTaskBFlag == 1 )
-       			{
-       			    /* Reset Task B Flag	*/
-       			    lTaskBFlag = 0;
-
-        			/* 'Give' the semaphore to unblock the task A. */
-       	        	vPrintString( pcTextForTaskB_SignalContinue );
-       	        	xSemaphoreGive( xBinarySemaphoreContinue );
-       			}
         	}
         }
 	}

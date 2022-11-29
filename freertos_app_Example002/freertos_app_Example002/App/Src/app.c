@@ -65,6 +65,9 @@
 #include "task_A.h"
 #include "task_B.h"
 #include "task_Test.h"
+#include "semphr.h"
+#include "FreeRTOS.h"
+#include "queue.h"
 
 // ------ Macros and definitions ---------------------------------------
 
@@ -74,7 +77,7 @@
 xSemaphoreHandle xBinarySemaphoreEntry;
 xSemaphoreHandle xBinarySemaphoreExit;
 xSemaphoreHandle xBinarySemaphoreContinue;
-
+xSemaphoreHandle xCountingSemaphore;
 /* Declare a variable of type xSemaphoreHandle.  This is used to reference the
  * mutex type semaphore that is used to ensure mutual exclusive access to ........ */
 xSemaphoreHandle xMutex;
@@ -83,7 +86,7 @@ xSemaphoreHandle xMutex;
 xTaskHandle vTaskAHandle;
 xTaskHandle vTaskBHandle;
 xTaskHandle vTaskTestHandle;
-
+xQueueHandle xQueue;
 /* Task A & B Counter	*/
 uint32_t	lTasksCnt;
 
@@ -101,6 +104,65 @@ const char *pcTextForMain = "freertos_app_Example002 is running: parking lot\r\n
 
 /*------------------------------------------------------------------*/
 /* App Initialization */
+// void appInit( void )
+// {
+// 	/* Print out the name of this Example. */
+//   	vPrintString( pcTextForMain );
+
+//     /* Before a semaphore is used it must be explicitly created.
+//      * In this example a binary semaphore is created. */
+//     vSemaphoreCreateBinary( xBinarySemaphoreEntry    );
+//     vSemaphoreCreateBinary( xBinarySemaphoreExit     );
+//     vSemaphoreCreateBinary( xBinarySemaphoreContinue );
+
+//     /* Check the semaphore was created successfully. */
+// 	configASSERT( xBinarySemaphoreEntry    !=  NULL );
+// 	configASSERT( xBinarySemaphoreExit     !=  NULL );
+// 	configASSERT( xBinarySemaphoreContinue !=  NULL );
+
+//     /* Before a semaphore is used it must be explicitly created.
+//      * In this example a mutex semaphore is created. */
+//     xMutex = xSemaphoreCreateMutex();
+
+//     /* Check the mutex was created successfully. */
+//     configASSERT( xMutex !=  NULL );
+
+// 	BaseType_t ret;
+
+//     /* Task A thread at priority 2 */
+//     ret = xTaskCreate( vTaskA,						/* Pointer to the function thats implement the task. */
+// 					   "Task A",					/* Text name for the task. This is to facilitate debugging only. */
+// 					   (2 * configMINIMAL_STACK_SIZE),	/* Stack depth in words. 				*/
+// 					   NULL,						/* We are not using the task parameter.		*/
+// 					   (tskIDLE_PRIORITY + 2UL),	/* This task will run at priority 1. 		*/
+// 					   &vTaskAHandle );				/* We are using a variable as task handle.	*/
+
+//     /* Check the task was created successfully. */
+//     configASSERT( ret == pdPASS );
+
+//     /* Task B thread at priority 2 */
+//     ret = xTaskCreate( vTaskB,						/* Pointer to the function thats implement the task. */
+// 					   "Task B",					/* Text name for the task. This is to facilitate debugging only. */
+// 					   (2 * configMINIMAL_STACK_SIZE),	/* Stack depth in words. 				*/
+// 					   NULL,						/* We are not using the task parameter.		*/
+// 					   (tskIDLE_PRIORITY + 2UL),	/* This task will run at priority 1. 		*/
+// 					   &vTaskBHandle );				/* We are using a variable as task handle.	*/
+
+//     /* Check the task was created successfully. */
+//     configASSERT( ret == pdPASS );
+
+// 	/* Task Test at priority 1, periodically excites the other tasks */
+//     ret = xTaskCreate( vTaskTest,					/* Pointer to the function thats implement the task. */
+// 					   "Task Test",					/* Text name for the task. This is to facilitate debugging only. */
+// 					   (2 * configMINIMAL_STACK_SIZE),	/* Stack depth in words. 				*/
+// 					   NULL,						/* We are not using the task parameter.		*/
+// 					   (tskIDLE_PRIORITY + 1UL),	/* This task will run at priority 2. 		*/
+// 					   &vTaskTestHandle );			/* We are using a variable as task handle.	*/
+
+//     /* Check the task was created successfully. */
+//     configASSERT( ret == pdPASS );
+// }
+
 void appInit( void )
 {
 	/* Print out the name of this Example. */
@@ -108,19 +170,18 @@ void appInit( void )
 
     /* Before a semaphore is used it must be explicitly created.
      * In this example a binary semaphore is created. */
-    vSemaphoreCreateBinary( xBinarySemaphoreEntry    );
-    vSemaphoreCreateBinary( xBinarySemaphoreExit     );
-    vSemaphoreCreateBinary( xBinarySemaphoreContinue );
-
+  	xCountingSemaphore = xSemaphoreCreateCounting(3,3);
+  	vSemaphoreCreateBinary( xBinarySemaphoreEntry    );
+  	vSemaphoreCreateBinary( xBinarySemaphoreExit     );
     /* Check the semaphore was created successfully. */
-	configASSERT( xBinarySemaphoreEntry    !=  NULL );
-	configASSERT( xBinarySemaphoreExit     !=  NULL );
-	configASSERT( xBinarySemaphoreContinue !=  NULL );
+	configASSERT( xCountingSemaphore    !=  NULL );
 
+	xQueue = xQueueCreate(3, sizeof(Data));
+	configASSERT (xQueue != (xQueueHandle)NULL);
     /* Before a semaphore is used it must be explicitly created.
      * In this example a mutex semaphore is created. */
     xMutex = xSemaphoreCreateMutex();
-
+    vPrintStringAndNumber( "CUENTA INICIAL:", uxSemaphoreGetCount(xCountingSemaphore));
     /* Check the mutex was created successfully. */
     configASSERT( xMutex !=  NULL );
 

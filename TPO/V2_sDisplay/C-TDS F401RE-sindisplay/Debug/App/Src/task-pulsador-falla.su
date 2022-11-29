@@ -1,0 +1,2 @@
+../App/Src/task-pulsador-falla.c:16:6:ANTIRREBOTE_Init	4	static
+../App/Src/task-pulsador-falla.c:22:6:ANTIRREBOTE_Update	24	static

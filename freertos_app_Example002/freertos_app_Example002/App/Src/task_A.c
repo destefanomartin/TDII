@@ -98,15 +98,15 @@ void vTaskA( void *pvParameters )
 {
 	/* Print out the name of this task. */
 	vPrintString( pcTextForTaskA );
-
+	char* recibido; 
 	/* As per most tasks, this task is implemented within an infinite loop.
 	 *
 	 * Take the semaphore once to start with so the semaphore is empty before the
 	 * infinite loop is entered.  The semaphore was created before the scheduler
 	 * was started so before this task ran for the first time.*/
-    xSemaphoreTake( xBinarySemaphoreEntry, (portTickType) 0 );
-    xSemaphoreTake( xBinarySemaphoreContinue, (portTickType) 0 );
-
+    //xSemaphoreTake( xBinarySemaphoreEntry, (portTickType) 0 );
+    //xSemaphoreTake( xBinarySemaphoreContinue, (portTickType) 0 );
+	xSemaphoreTake( xBinarySemaphoreEntry, (portTickType) 0 );
     /* Init Task A & B Counter and Reset Task A Flag	*/
     lTasksCnt = 0;
     lTaskAFlag = 0;
@@ -121,7 +121,7 @@ void vTaskA( void *pvParameters )
          * semaphore has been successfully obtained - so there is no need to check
          * the returned value. */
     	vPrintString( pcTextForTaskA_WaitEntry );
-    	xSemaphoreTake( xBinarySemaphoreEntry, portMAX_DELAY );
+    	xSemaphoreTake( xBinarySemaphoreEntry , portMAX_DELAY );
         {
     		/* The semaphore is created before the scheduler is started so already
     		 * exists by the time this task executes.
@@ -138,36 +138,15 @@ void vTaskA( void *pvParameters )
         		 * successfully obtained. */
 
         		/* Update Task A & B Counter */
-    			lTasksCnt++;
-    			vPrintStringAndNumber( pcTextForTaskA_lTasksCnt, lTasksCnt);
 
-   			    /* Check Task A & B Counter	*/
-    			if( lTasksCnt == lTasksCntMAX )
-    			{
-       			    /* Set Task A Flag	*/
-    				lTaskAFlag = 1;
-    			}
-       			/* 'Give' the semaphore to unblock the tasks. */
+    			xQueueReceive
        			vPrintString( pcTextForTaskA_SignalMutex );
        			xSemaphoreGive( xMutex );
 
-   			    /* Check Task A Flag	*/
-       			if( lTaskAFlag == 1 )
-       			{
-       			    /* Reset Task A Flag	*/
-       			    lTaskAFlag = 0;
+    			xSemaphoreTake(xCountingSemaphore, portMAX_DELAY);
+    			vPrintStringAndNumber( pcTextForTaskA_lTasksCnt, uxSemaphoreGetCount(xCountingSemaphore));
+       			/* 'Give' the semaphore to unblock the tasks. */
 
-       		        /* Use the semaphore to wait for the event.  The task blocks
-       		         * indefinitely meaning this function call will only return once the
-       		         * semaphore has been successfully obtained - so there is no need to check
-       		         * the returned value. */
-       			    vPrintString( pcTextForTaskA_WaitContinue );
-       	        	xSemaphoreTake( xBinarySemaphoreContinue, portMAX_DELAY );
-       	        	{
-       	        		/* The following line will only execute once the semaphore has been
-       	        		 * successfully obtained. */
-       	        	}
-       			}
         	}
         }
 	}

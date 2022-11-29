@@ -1,0 +1,12 @@
+../Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+../Drivers/CMSIS/Include/core_cm4.h:2022:26:SysTick_Config	16	static
+D:/Onedrive/OneDrive - UTN.BA/Escritorio/test_original/C-TDS F401RE-sindisplay/OS/Inc/scheduler.h:51:20:DWT_Init	4	static
+D:/Onedrive/OneDrive - UTN.BA/Escritorio/test_original/C-TDS F401RE-sindisplay/OS/Inc/scheduler.h:57:24:DWT_GetTime	4	static
+D:/Onedrive/OneDrive - UTN.BA/Escritorio/test_original/C-TDS F401RE-sindisplay/OS/Inc/scheduler.h:62:20:DWT_Clear	4	static
+../OS/Src/scheduler.c:17:6:SCH_Dispatch_Tasks	32	static,ignoring_inline_asm
+../OS/Src/scheduler.c:94:6:SCH_Init	24	static
+../OS/Src/scheduler.c:135:6:SCH_Start	4	static
+../OS/Src/scheduler.c:144:6:SCH_Go_To_Sleep	4	static,ignoring_inline_asm
+../OS/Src/scheduler.c:150:10:SCH_Add_Task	32	static
+../OS/Src/scheduler.c:214:6:SCH_SysTick_Handler	4	static
+../OS/Src/scheduler.c:220:8:SCH_Get_Current_Task_Pointer	4	static

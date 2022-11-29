@@ -55,6 +55,11 @@
 
 // ------ typedef ------------------------------------------------------
 
+typedef struct data_from_cars {
+	char (*patente)[3];
+} Data;
+
+
 // ------ external data declaration ------------------------------------
 
 // ------ external functions declaration -------------------------------

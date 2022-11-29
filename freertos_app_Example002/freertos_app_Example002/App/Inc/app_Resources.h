@@ -60,8 +60,9 @@
  * semaphore that is used to synchronize a task with other task. */
 extern xSemaphoreHandle xBinarySemaphoreEntry;
 extern xSemaphoreHandle xBinarySemaphoreExit;
-extern xSemaphoreHandle xBinarySemaphoreContinue;
+// extern xSemaphoreHandle xBinarySemaphoreContinue;
 
+extern xSemaphoreHandle xCountingSemaphore;
 /* Declare a variable of type xSemaphoreHandle.  This is used to reference the
  * mutex type semaphore that is used to ensure mutual exclusive access to...*/
 extern xSemaphoreHandle xMutex;
@@ -71,6 +72,7 @@ extern xTaskHandle vTaskAHandle;
 extern xTaskHandle vTaskBHandle;
 extern xTaskHandle vTaskTestHandle;
 
+extern xQueueHandle xQueue;
 /* Task A & B Counter	*/
 #define lTasksCntMAX	3
 extern uint32_t	lTasksCnt;

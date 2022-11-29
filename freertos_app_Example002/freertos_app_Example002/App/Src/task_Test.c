@@ -63,7 +63,7 @@
 /* Application includes. */
 #include "app_Resources.h"
 #include "task_Test.h"
-
+#include "app.h"
 // ------ Macros and definitions ---------------------------------------
 
 // ------ internal data declaration ------------------------------------
@@ -132,6 +132,7 @@ void vTaskTest( void *pvParameters )
 	uint32_t i = TEST_X;
 	portTickType xLastWakeTime;
 	UBaseType_t uxPriority;
+	char* patente[] = {"abc121","abc122","abc123"};
 
 	/* Print out the name, parameters and TEST_X of this task. */
 	vPrintString( pcTextForTaskTest );
@@ -173,7 +174,8 @@ void vTaskTest( void *pvParameters )
 
 				    /* 'Give' the semaphore to unblock the task A. */
 		    		vPrintString( pcTextForTaskTest_SignalEntry );
-					xSemaphoreGive( xBinarySemaphoreEntry );
+					xSemaphoreGive(  xBinarySemaphoreEntry );
+					xQueueSendToBack(xQueue, patente[i] ,(portTickType)0);
 	    			break;
 
 	    		case Exit:

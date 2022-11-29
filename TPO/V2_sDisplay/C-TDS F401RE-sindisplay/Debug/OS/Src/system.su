@@ -1,0 +1,6 @@
+../OS/Src/system.c:11:6:SYSTEM_Init	8	static
+../OS/Src/system.c:16:6:SYSTEM_Identify_Required_Mode	4	static
+../OS/Src/system.c:26:6:SYSTEM_Configure_Required_Mode	16	static
+../OS/Src/system.c:80:6:SYSTEM_Perform_Safe_Shutdown	24	static
+../OS/Src/system.c:109:6:SYSTEM_Change_Mode_Fault	16	static
+../OS/Src/system.c:115:14:SYSTEM_Get_Mode	4	static
