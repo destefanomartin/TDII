@@ -1,0 +1,2 @@
+../App/Src/task-heartbeat.c:3:6:HEARTBEAT_Init	4	static
+../App/Src/task-heartbeat.c:6:6:HEARTBEAT_Update	8	static

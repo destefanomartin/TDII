@@ -1,0 +1,2 @@
+../App/Src/task-watchdog.c:5:6:WATCHDOG_Init	4	static
+../App/Src/task-watchdog.c:8:6:WATCHDOG_Update	8	static

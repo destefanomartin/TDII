@@ -1,0 +1,2 @@
+../App/Src/task-mediciones.c:18:6:MEDICIONES_Init	4	static
+../App/Src/task-mediciones.c:27:6:MEDICIONES_Update	4	static

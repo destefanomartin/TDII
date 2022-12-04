@@ -1,0 +1,2 @@
+../App/Src/task-display.c:24:6:DISPLAY_Init	16	static
+../App/Src/task-display.c:71:6:DISPLAY_Update	8	static

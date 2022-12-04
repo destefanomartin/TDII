@@ -1,0 +1,2 @@
+../App/Src/task-pulsador-medir.c:21:6:PULSADOR_MEDIR_Init	16	static
+../App/Src/task-pulsador-medir.c:31:6:PULSADOR_MEDIR_Update	24	static

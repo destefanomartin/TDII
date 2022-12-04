@@ -174,7 +174,7 @@ void HD44780_Display()
 
 void HD44780_NoCursor()
 {
-  dpControl &= ~LCD_CURSORON;
+  dpControl &= ~LCD_CURSOROFF;
   SendCommand(LCD_DISPLAYCONTROL | dpControl);
 }
 

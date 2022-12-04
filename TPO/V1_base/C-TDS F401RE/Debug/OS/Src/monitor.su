@@ -1,0 +1,4 @@
+../OS/Src/monitor.c:11:6:MONITOR_I_Start	24	static
+../OS/Src/monitor.c:28:10:MONITOR_I_Stop	16	static
+../OS/Src/monitor.c:58:6:MONITOR_I_Disable	8	static
+../OS/Src/monitor.c:63:6:MONITOR_IRQHandler	16	static

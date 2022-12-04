@@ -1,0 +1,2 @@
+../App/Src/task-audio-processing.c:17:6:READ_ADC_Init	16	static
+../App/Src/task-audio-processing.c:27:6:READ_ADC_Update	24	static
