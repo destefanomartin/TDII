@@ -52,7 +52,7 @@ extern "C" {
 /* USER CODE BEGIN EM */
 
 // Flag para activar/desactivar el watchdog sin tener que cambiar la configuracion en el .ioc
-#define WWDG_ENABLED (0)
+#define WWDG_ENABLED (1)
 
 /* USER CODE END EM */
 
@@ -76,8 +76,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define WWDG_WINDOW 66
-#define WWDG_TICKS 74
+#define WWDG_WINDOW 99
+#define WWDG_TICKS 115
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
 #define LD2_Pin GPIO_PIN_5

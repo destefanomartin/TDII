@@ -1,8 +1,8 @@
 ../Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	16	static
 ../Drivers/CMSIS/Include/core_cm4.h:2022:26:SysTick_Config	16	static
-C:/Digitales 2/workspaceProyecto/C-TDS F401RE/OS/Inc/scheduler.h:51:20:DWT_Init	4	static
-C:/Digitales 2/workspaceProyecto/C-TDS F401RE/OS/Inc/scheduler.h:57:24:DWT_GetTime	4	static
-C:/Digitales 2/workspaceProyecto/C-TDS F401RE/OS/Inc/scheduler.h:62:20:DWT_Clear	4	static
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS F401RE/OS/Inc/scheduler.h:51:20:DWT_Init	4	static
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS F401RE/OS/Inc/scheduler.h:57:24:DWT_GetTime	4	static
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS F401RE/OS/Inc/scheduler.h:62:20:DWT_Clear	4	static
 ../OS/Src/scheduler.c:17:6:SCH_Dispatch_Tasks	32	static,ignoring_inline_asm
 ../OS/Src/scheduler.c:94:6:SCH_Init	24	static
 ../OS/Src/scheduler.c:135:6:SCH_Start	4	static

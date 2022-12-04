@@ -62,8 +62,8 @@ all: main-build
 main-build: C-TDS\ F401RE.elf secondary-outputs
 
 # Tool invocations
-C-TDS\ F401RE.elf C-TDS\ F401RE.map: $(OBJS) $(USER_OBJS) C:\Digitales\ 2\workspaceProyecto\C-TDS\ F401RE\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "C-TDS F401RE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Digitales 2\workspaceProyecto\C-TDS F401RE\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="C-TDS F401RE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C-TDS\ F401RE.elf C-TDS\ F401RE.map: $(OBJS) $(USER_OBJS) D:\RepTD\TDII\TPO\V5-TodoMenosWDT\C-TDS\ F401RE\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "C-TDS F401RE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\RepTD\TDII\TPO\V5-TodoMenosWDT\C-TDS F401RE\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="C-TDS F401RE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

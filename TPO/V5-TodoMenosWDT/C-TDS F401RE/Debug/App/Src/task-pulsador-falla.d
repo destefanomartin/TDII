@@ -1,5 +1,5 @@
 App/Src/task-pulsador-falla.o: ../App/Src/task-pulsador-falla.c \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-pulsador-falla.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-pulsador-falla.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -33,20 +33,20 @@ App/Src/task-pulsador-falla.o: ../App/Src/task-pulsador-falla.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/OS.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/system.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-heartbeat.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-watchdog.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-audio-processing.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-pulsador-medir.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-mediciones.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-display.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/scheduler.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/monitor.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/pin_functions_stm32f401.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/ports_stm32f401.h \
- C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/i2c-display.h
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-pulsador-falla.h:
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/OS.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/system.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-heartbeat.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-watchdog.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-audio-processing.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-pulsador-medir.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-mediciones.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-display.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/scheduler.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/monitor.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/pin_functions_stm32f401.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/ports_stm32f401.h \
+ D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/i2c-display.h
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-pulsador-falla.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -81,16 +81,16 @@ C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-pulsador-falla.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/OS.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/system.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-heartbeat.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-watchdog.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-audio-processing.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-pulsador-medir.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-mediciones.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/task-display.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/scheduler.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/OS/Inc/monitor.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/pin_functions_stm32f401.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/ports_stm32f401.h:
-C:/Digitales\ 2/workspaceProyecto/C-TDS\ F401RE/App/Inc/i2c-display.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/OS.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/system.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-heartbeat.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-watchdog.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-audio-processing.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-pulsador-medir.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-mediciones.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/task-display.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/scheduler.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/OS/Inc/monitor.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/pin_functions_stm32f401.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/ports_stm32f401.h:
+D:/RepTD/TDII/TPO/V5-TodoMenosWDT/C-TDS\ F401RE/App/Inc/i2c-display.h:
